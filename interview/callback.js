@@ -1,4 +1,3 @@
-
 const fetch_me_clouds = ( i_will_not_call_you ) => 
 {
     setTimeout(() => 
@@ -16,4 +15,4 @@ fetch_me_clouds( (_this, that) =>
 console.log("Thunderstorm");
 
 
-// Output: ?
+// Output: 
