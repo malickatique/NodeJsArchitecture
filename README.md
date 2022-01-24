@@ -1,3 +1,7 @@
+# Node JS
+
+- Node Js Notes
+
 ## Node Modules
 - A few Node modules are globally available, whereas other require to import them using `require("module-name")`
 - All `node_module` files have their own scope. In order to use functions and other props in module we need to export it.
@@ -138,92 +142,6 @@ const { price = 100, checkAvalability } = crypto;
 - Install:
     `npm init` then `npm install express`
 - Express Js Topics: `express()`, `Application`, `Request`, `Response`, `Router`
-
-# Mongo DB
-- Installation
-    1. Download `MongoDB Community Server` as .msi under On-premises on mongodb.com website
-    2. Install the .msi file
-    3. Add mongo bin to windows PATH variable
-    4. Create db dir in `C:/Data/db` all DBs will be saved here
-    5. Run `mongod` in CMD then `mongo`
-    6. Install MongoDB admin toold GUI: Mongo DB Compass
-
-- Connect Express with Mongo DB
-    1. Mongo DB Driver and Documentations: https://docs.mongodb.com/drivers/node/current/
-    2. Install `npm i mongodb` driver to connect with Mongo DB
-
-### Mongo DB Usage
-```js
-const mongodb = require("mongodb");
-const MongoClient = mongodb.MongoClient;
-const connectionURL = "mongodb://127.0.0.1:27017";
-const database = "vaultspay-db";
-const client = new MongoClient(connectionURL);
-
-// Establish Connection
-try 
-{
-    // Connect with client DB
-    client.connect();
-    const db = client.db(database);
-} 
-catch (error) 
-{
-    return console.log( error );
-}
-```
-
-- The ObjectID of a collections instance consists of three parts: time stamp, random number and ...
-
-#### Create field
-```js
-db.collection("users").insertOne({
-    name: "Malik",
-    age: 40
-}, (res, err) => {
-    if( err )
-    {
-        return console.log( err );
-    }
-    console.log( res );
-});
-```
-
-#### Read data
-```js
-db.collection("users").findOne({
-    name: "Malik",
-    // Or ID etc
-}, 
-(err, record) => {
-    if( err )
-    {
-        return console.log( err );
-    }
-    console.log( record );
-});
-
-// Fectch collection
-db.collection("users").find({name: "Malik"}).toArray((err, users) => {
-
-    if( err )
-    {
-        return console.log( err );
-    }
-    console.log( users );
-});
-```
-- For Otrher DB Operations check MongoDB documentation
-
-### Mongoose Library
-- Install: `npm i mongoose`
-
-
-### Express Router
-```js
-
-
-```
 
 ## Sockets
 

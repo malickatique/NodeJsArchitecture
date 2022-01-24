@@ -2,8 +2,10 @@ const fetch_me_clouds = new Promise( (resolve, reject) =>
 {
     setTimeout(()=> 
     {
-        reject("cloud rays");
-        resolve("cloud ways" );
+        reject("I fulfilled my promise.");
+
+        resolve("I will not abide by my words." );
+
     }, 2000)
 });
 
