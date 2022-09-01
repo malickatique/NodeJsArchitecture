@@ -1,8 +1,5 @@
-const auth = require("./auth");
-const user = require("./user");
-const admin = require("./admin");
-const web = require("./web");
+const api = require('./api');
 
-const router = [user, auth, admin, web];
+const router = [api];
 
 module.exports = router;
