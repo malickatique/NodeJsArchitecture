@@ -1,15 +1,16 @@
-const { router } = require('../helpers');
-// const { auth } = require('@burency/common');
+const { router } = require('../framework');
 
-// const GroupController = require('../app/controllers/admin/GroupController');
+const UserController = require('../app/controllers/user/UserController');
 
-// // user thirdparties
-router.get('/test', (req, res) => {
-    return '';
+router.get('/', (req, res) => {
+    return 'Test Node Js Architecture!';
 });
-// router.get('/admin/user-thirdparties/:id', UserThirdpartyController.get);
-// router.post('/admin/user-thirdparties', UserThirdpartyController.post);
-// router.put('/admin/user-thirdparties', UserThirdpartyController.put);
-// router.patch('/admin/user-thirdparties', UserThirdpartyController.patch);
+
+router.get('/user/users', UserController.index);
+router.get('/user/users/:id', UserController.get);
+router.post('/user/users', UserController.post);
+router.put('/user/users', UserController.put);
+router.patch('/user/users', UserController.patch);
+router.patch('/user/users', UserController.delete);
 
 module.exports = router;

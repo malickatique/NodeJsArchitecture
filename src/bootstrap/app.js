@@ -1,11 +1,16 @@
-const http = require('http');
 const path = require('path');
+/**
+ * Please do not change its position
+ */
+require('dotenv').config({ path: path.join(process.cwd(), `.env.${process.env.NODE_ENV}`) });
+
+const http = require('http');
 const cors = require('cors');
 const express = require('express');
 const bodyParser = require('body-parser');
 const routes = require('../routes');
 const DBConn = require('./database');
-require('dotenv').config({ path: path.join(process.cwd(), `.env.${process.env.NODE_ENV}`) });
+const { Response } = require('../framework');
 
 class Application {
     constructor() {
@@ -24,7 +29,6 @@ class Application {
     }
     globalMiddlewares() {
         this.app.use(cors());
-        // this.app.use(logger);
         // this.app.use(validate);
     }
     registerRoutes() {
@@ -39,8 +43,7 @@ class Application {
         });
     }
     async connectDatabase() {
-        DBConn.init();
-        // await database.initDBConnection();
+        await DBConn.init();
     }
     runServer() {
         this.webSocketServer = this.server.listen(this.port, () => {
