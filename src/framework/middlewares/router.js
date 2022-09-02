@@ -45,4 +45,4 @@ const routeContainer = (originRouterMethod) => {
 const router = express.Router();
 routerWrapper(router);
 
-module.exports = { router };
+module.exports = router;

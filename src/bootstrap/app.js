@@ -10,7 +10,7 @@ const express = require('express');
 const bodyParser = require('body-parser');
 const routes = require('../routes');
 const DBConn = require('./database');
-const { Response } = require('../framework');
+const { Response, validate } = require('../framework');
 
 class Application {
     constructor() {
@@ -29,7 +29,7 @@ class Application {
     }
     globalMiddlewares() {
         this.app.use(cors());
-        // this.app.use(validate);
+        this.app.use(validate);
     }
     registerRoutes() {
         this.app.use(routes);
