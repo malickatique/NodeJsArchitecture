@@ -1,11 +1,11 @@
 const { router } = require('../framework');
 
-const SDKPaymentTest = require('../app/controllers/SDKPaymentTest');
+const IssuingTransactionTest = require('../app/tests/IssuingTransactionTest');
 
 router.get('/', (req, res) => {
     res.send('Test Node Js Architecture!');
 });
 
-router.get('/testing', SDKPaymentTest.index);
+router.get('/transactions', IssuingTransactionTest.index);
 
 module.exports = router;

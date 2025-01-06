@@ -2,7 +2,6 @@ const { Worker } = require('worker_threads');
 const path = require('path');
 const fs = require('fs');
 const { Repository } = require('../../framework');
-const EndpointsReport = require("../services/EndpointsReport");
 
 /**
  * Global Variables

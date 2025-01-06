@@ -19,12 +19,12 @@ const api = async (method, url, data = {}, headers = {}) => {
             headers
         });
         const responseTime = Date.now() - startTime;
-        return response.data;
+        return response.data.data;
     } catch (error) {
         // Handle error (logging, rethrow, etc.)
         // console.error(`Error making API call to ${url}:`, error.response ? error.response.data : error.message);
         const responseTime = Date.now() - startTime;
-        return error;
+        return error.response.data;
     }
 };
 

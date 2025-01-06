@@ -2,6 +2,7 @@ const path = require('path');
 /**
  * Please do not change its position
  */
+
 require('dotenv').config({ path: path.join(process.cwd(), `.env.${process.env.NODE_ENV}`) });
 
 const http = require('http');
