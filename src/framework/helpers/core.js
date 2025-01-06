@@ -1,8 +1,8 @@
 const path = require('path');
 const Joi = require('joi');
 
-const callRepository = async (repository, method, args) => {
-    const repositoryPath = path.resolve(process.cwd(), 'src/app/repositories/', repository);
+const callService = async (repository, method, args) => {
+    const repositoryPath = path.resolve(process.cwd(), 'src/app/services/', repository);
     const Repository = require(repositoryPath);
     return await Repository[method](args);
 };
@@ -85,7 +85,7 @@ const exists = async (options = { field: null, value: null, model: null, formFie
 };
 
 module.exports = {
-    callRepository,
+    callService,
     send,
     exists,
     notExists,

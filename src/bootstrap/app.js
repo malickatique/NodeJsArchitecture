@@ -9,7 +9,7 @@ const cors = require('cors');
 const express = require('express');
 const bodyParser = require('body-parser');
 const routes = require('../routes');
-const DBConn = require('./database');
+// const DBConn = require('./database');
 const { Response, validate } = require('../framework');
 
 class Application {
@@ -43,7 +43,7 @@ class Application {
         });
     }
     async connectDatabase() {
-        await DBConn.init();
+        // await DBConn.init();
     }
     runServer() {
         this.webSocketServer = this.server.listen(this.port, () => {
